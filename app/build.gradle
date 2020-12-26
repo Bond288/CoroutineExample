@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -19,9 +20,14 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField "String", "API_URL", "\"https://jsonplaceholder.typicode.com\""
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "API_URL", "\"https://jsonplaceholder.typicode.com\""
         }
     }
     compileOptions {
@@ -30,6 +36,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
     }
 }
 
@@ -50,4 +59,12 @@ dependencies {
     implementation ktorDependencies.values()
 
     implementation coroutinesDependencies.values()
+
+    testImplementation ktorTest
+
+    testImplementation junit
+
+    testImplementation mockito
+
+    testImplementation coroutinesTest
 }

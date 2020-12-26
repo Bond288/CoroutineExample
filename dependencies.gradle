@@ -1,8 +1,12 @@
 ext.versions = [
         kotlin_version            : '1.4.21',
         core_version              : '1.3.1',
+        ktx_version               : '1.2.5',
         appcompat_version         : '1.2.0',
+        recycler_view_version     : '1.1.0',
+        swipe_to_refresh_version  : '1.1.0',
         constraintlayout_version  : '2.0.1',
+        material_version          : '1.2.1',
         ktor_version              : '1.4.3',
         coroutines_version        : '1.4.1',
         coroutines_android_version: '1.3.9',
@@ -11,7 +15,7 @@ ext.versions = [
 ]
 
 ext.kotlinDependencies = [
-        stdlib       : "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin_version",
+        stdlib: "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin_version",
         plugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin_version"
 ]
 
@@ -19,6 +23,10 @@ ext.generalDependencies = [
         core            : "androidx.core:core-ktx:$versions.core_version",
         appcompat       : "androidx.appcompat:appcompat:$versions.appcompat_version",
         constraintlayout: "androidx.constraintlayout:constraintlayout:$versions.constraintlayout_version",
+        material        : "com.google.android.material:material:$versions.material_version",
+        fragment_ktx    : "androidx.fragment:fragment-ktx:$versions.ktx_version",
+        recyclerview    : "androidx.recyclerview:recyclerview:$versions.recycler_view_version",
+        swipe_to_refresh: "androidx.swiperefreshlayout:swiperefreshlayout:$versions.swipe_to_refresh_version"
 ]
 
 ext.daggerDependencies = [
@@ -40,3 +48,13 @@ ext.coroutinesDependencies = [
         core   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines_version",
         android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines_android_version"
 ]
+
+ext.ktorTest = "io.ktor:ktor-client-mock:$versions.ktor_version"
+
+ext.coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2"
+
+ext.junit = "junit:junit:4.13.1"
+
+ext.mockito = "org.mockito:mockito-core:1.10.19"
+
+ext.baseUrl = "https://jsonplaceholder.typicode.com"
